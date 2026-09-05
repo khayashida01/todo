@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TODO アプリ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>TODO</h1>
+      <button id="theme-toggle" class="icon-btn" title="テーマ切替" aria-label="テーマ切替">🌓</button>
+    </header>
+
+    <form id="todo-form" class="todo-form">
+      <input
+        id="todo-input"
+        type="text"
+        placeholder="やることを入力..."
+        autocomplete="off"
+        maxlength="200"
+        required
+      />
+      <button type="submit" class="btn-add">追加</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist">
+        <button class="filter-btn active" data-filter="all">すべて</button>
+        <button class="filter-btn" data-filter="active">未完了</button>
+        <button class="filter-btn" data-filter="completed">完了済み</button>
+      </div>
+      <button id="clear-completed" class="btn-link">完了済みを削除</button>
+    </div>
+
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <p id="empty-state" class="empty-state" hidden>タスクはありません</p>
+
+    <footer class="app-footer">
+      <span id="items-left">0 件残り</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
